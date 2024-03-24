@@ -1,6 +1,6 @@
 # 酷狗概念版
 
-存在 3 规则组 - [com.kugou.android.lite](/src/apps/com.kugou.android.lite.ts)
+存在 4 规则组 - [com.kugou.android.lite](/src/apps/com.kugou.android.lite.ts)
 
 ## 青少年模式
 
@@ -22,3 +22,9 @@
 - [快照-0](https://i.gkd.li/i/14321713)
 - [快照-1](https://i.gkd.li/i/14321718)
 - [快照-2](https://i.gkd.li/i/14321724)
+
+## 更新提示
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/i/14622566)

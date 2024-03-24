@@ -1,6 +1,6 @@
 # 应用包管理组件
 
-存在 4 规则组 - [com.miui.packageinstaller](/src/apps/com.miui.packageinstaller.ts)
+存在 5 规则组 - [com.miui.packageinstaller](/src/apps/com.miui.packageinstaller.ts)
 
 ## 功能类-安装来源不可信
 
@@ -49,3 +49,14 @@
 - [快照-6](https://i.gkd.li/i/13024731)
 - [快照-7](https://i.gkd.li/i/12817999)
 - [快照-8](https://i.gkd.li/i/13255733)
+
+## 功能类-澎湃-自动安装/更新
+
+默认禁用 - 不完整，缺失自动点击完成部分。启用后安装高风险应用将自动完成，请自行评估风险决定是否启用
+
+- [快照-0](https://i.gkd.li/i/14083552)
+- [快照-1](https://i.gkd.li/i/14083554)
+- [快照-2](https://i.gkd.li/i/14653062)
+- [快照-3](https://i.gkd.li/i/14653087)
+- [快照-4](https://i.gkd.li/i/14654045)
+- [快照-5](https://i.gkd.li/i/14653096)

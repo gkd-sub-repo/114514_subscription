@@ -1,4 +1,4 @@
-# @AIsouler/GKD_subscription
+# @たどころ こうじ/gkd_subscription
 
 ---
 
@@ -16,12 +16,12 @@
 订阅链接：
 
 ```txt
-https://raw.gitmirror.com/AIsouler/GKD_subscription/main/dist/AIsouler_gkd.json5
+https://raw.gitmirror.com/gkd-sub-repo/114514_subscription/main/dist/114514_gkd.json5
 ```
 
-当前版本: v42
+当前版本: v1
 
-当前订阅文件已适配 713 个应用，共有 1658 应用规则组，3 全局规则组
+当前订阅文件已适配 713 个应用，共有 1660 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./AppList.md)
 
@@ -37,8 +37,8 @@ https://raw.gitmirror.com/AIsouler/GKD_subscription/main/dist/AIsouler_gkd.json5
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=AIsouler/GKD_subscription&_v=42)
+![img](https://contrib.rocks/image?repo=gkd-sub-repo/114514_subscription&_v=1)
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=AIsouler/GKD_subscription&type=Date)](https://star-history.com/#AIsouler/GKD_subscription&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=gkd-sub-repo/114514_subscription&type=Date)](https://star-history.com/#gkd-sub-repo/114514_subscription&Date)

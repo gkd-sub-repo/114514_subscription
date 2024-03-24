@@ -1,10 +1,10 @@
 {
-  "name": "@aisouler/gkd_subscription",
+  "name": "@gkd-sub-repo/114514_subscription",
   "type": "module",
-  "version": "1.42.0",
-  "main": "./dist/AIsouler_gkd.json5",
-  "unpkg": "./dist/AIsouler_gkd.json5",
-  "jsdelivr": "./dist/AIsouler_gkd.json5",
+  "version": "1.0.0",
+  "main": "./dist/114514_gkd.json5",
+  "unpkg": "./dist/114514_gkd.json5",
+  "jsdelivr": "./dist/114514_gkd.json5",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -43,15 +43,15 @@
     "tsx": "^4.7.1",
     "typescript": "^5.4.3"
   },
-  "author": "AIsouler",
+  "author": "田所浩二",
   "license": "MIT",
-  "homepage": "https://github.com/AIsouler/GKD_subscription#readme",
+  "homepage": "https://github.com/gkd-sub-repo/114514_subscription#readme",
   "bugs": {
-    "url": "https://github.com/AIsouler/GKD_subscription/issues"
+    "url": "https://github.com/gkd-sub-repo/114514_subscription/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AIsouler/GKD_subscription.git"
+    "url": "git+https://github.com/gkd-sub-repo/114514_subscription.git"
   },
   "volta": {
     "node": "20.9.0"

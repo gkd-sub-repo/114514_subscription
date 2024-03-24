@@ -1,7 +1,7 @@
 {
   "name": "@gkd-sub-repo/114514_subscription",
   "type": "module",
-  "version": "1.1.0",
+  "version": "1.43.0",
   "main": "./dist/114514_gkd.json5",
   "unpkg": "./dist/114514_gkd.json5",
   "jsdelivr": "./dist/114514_gkd.json5",

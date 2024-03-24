@@ -19,7 +19,7 @@
 https://raw.gitmirror.com/gkd-sub-repo/114514_subscription/main/dist/114514_gkd.json5
 ```
 
-当前版本: v1
+当前版本: v43
 
 当前订阅文件已适配 713 个应用，共有 1660 应用规则组，3 全局规则组
 
@@ -37,7 +37,7 @@ https://raw.gitmirror.com/gkd-sub-repo/114514_subscription/main/dist/114514_gkd.
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=gkd-sub-repo/114514_subscription&_v=1)
+![img](https://contrib.rocks/image?repo=gkd-sub-repo/114514_subscription&_v=43)
 
 ## Star History
 

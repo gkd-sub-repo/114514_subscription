@@ -10,11 +10,11 @@ jobs:
     if: github.repository == 'gkd-sub-repo/114514_subscription'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Get changed files
         id: changed_files
-        uses: tj-actions/changed-files@v39
+        uses: tj-actions/changed-files@v44
 
       - name: Check changed files
         run: |
@@ -26,7 +26,7 @@ jobs:
             echo "$file was changed"
           done
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 

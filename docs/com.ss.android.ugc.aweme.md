@@ -1,6 +1,6 @@
 # 抖音
 
-存在 15 规则组 - [com.ss.android.ugc.aweme](/src/apps/com.ss.android.ugc.aweme.ts)
+存在 16 规则组 - [com.ss.android.ugc.aweme](/src/apps/com.ss.android.ugc.aweme.ts)
 
 ## 局部广告-关闭用户推荐
 
@@ -71,15 +71,14 @@
 - [快照-2](https://i.gkd.li/i/14160675)
 - [快照-3](https://i.gkd.li/i/13372725)
 
-## 功能类-添加快捷方式到桌面
+## 功能类-[添加快捷方式到桌面]弹窗
 
-默认禁用
-
-- [示例-0](https://m.gkd.li/57941037/b06cba6d-cb80-4999-8c0b-309d86f7a7a3)
+默认禁用 - 关闭弹窗
 
 - [快照-0](https://i.gkd.li/i/13338556)
 - [快照-1](https://i.gkd.li/i/13669682)
-- [快照-2](https://i.gkd.li/i/14325749)
+- [快照-2](https://i.gkd.li/i/14740312)
+- [快照-3](https://i.gkd.li/i/14325749)
 
 ## 全屏广告-视频播放中途插入的打招呼界面
 
@@ -114,3 +113,11 @@
 - [示例-0](https://m.gkd.li/57941037/ef703cd7-99af-4e10-8345-9860ed160b8b)
 
 - [快照-0](https://i.gkd.li/i/14585377)
+
+## 权限提示-请求访问通讯录弹窗
+
+默认禁用 - 点击[拒绝]
+
+- [示例-0](https://m.gkd.li/57941037/8f70418d-92f0-4264-83fd-a680350c478e)
+
+- [快照-0](https://i.gkd.li/i/14735280)

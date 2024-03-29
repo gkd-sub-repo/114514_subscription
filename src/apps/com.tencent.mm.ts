@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.tencent.mm',
   name: '微信',
-  deprecatedKeys: [12, 20],
+  deprecatedKeys: [12, 20, 27],
   groups: [
     {
       key: 0,
@@ -27,6 +27,18 @@ export default defineAppConfig({
             'https://i.gkd.li/i/13791200',
             'https://i.gkd.li/i/14647413',
           ],
+        },
+        {
+          key: 1,
+          quickFind: true,
+          position: {
+            left: 'width * 0.9223',
+            top: 'width * 0.0349',
+          },
+          excludeMatches:
+            'RelativeLayout >5 LinearLayout[childCount=2] > TextView[text!=null] + LinearLayout[visibleToUser=true][clickable=true]',
+          matches: '@LinearLayout >2 [text="广告"]',
+          snapshotUrls: 'https://i.gkd.li/i/14783802',
         },
 
         // 预留key
@@ -59,7 +71,7 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/i/13791202',
         },
         {
-          preKeys: [0],
+          preKeys: [0, 1],
           key: 28,
           name: '点击[关闭该广告]',
           quickFind: true,
@@ -68,6 +80,7 @@ export default defineAppConfig({
           snapshotUrls: [
             'https://i.gkd.li/i/12642584',
             'https://i.gkd.li/i/14647839',
+            'https://i.gkd.li/i/14783820',
           ],
         },
         {
@@ -89,6 +102,7 @@ export default defineAppConfig({
           snapshotUrls: [
             'https://i.gkd.li/i/12663984',
             'https://i.gkd.li/i/14647940',
+            'https://i.gkd.li/i/14783534',
           ],
         },
         {
@@ -471,20 +485,24 @@ export default defineAppConfig({
       quickFind: true,
       actionMaximum: 1,
       resetMatch: 'app',
-      rules:
-        'TextView[text^="为呵护未成年人健康成长，微信推出青少年模式"] +2 Button[text="我知道了"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/13538145',
-        'https://i.gkd.li/i/13575195', //activityIds: 'com.tencent.mm.plugin.finder.ui.FinderHomeAffinityUI'
+      rules: [
+        {
+          activityIds: 'com.tencent.mm.plugin.finder.ui.',
+          matches: '[text*="青少年模式"] +(2,3) [text="我知道了"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13538145',
+            'https://i.gkd.li/i/13575195',
+            'https://i.gkd.li/i/14735456',
+          ],
+        },
       ],
     },
     {
       key: 18,
       name: '功能类-青少年模式自动点击验证密码',
       desc: '点击“验证密码”以申请临时访问',
-      actionMaximum: 1,
-      resetMatch: 'activity',
       matchTime: 10000,
+      actionMaximum: 1,
       rules: [
         {
           key: 0,
@@ -575,7 +593,8 @@ export default defineAppConfig({
         {
           key: 0,
           activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
-          matches: 'WebView > View > View > View[childCount=2] > View + Image',
+          matches:
+            'WebView > View[childCount=15] > View > View[childCount=2] > View > Image < * + Image',
           snapshotUrls: 'https://i.gkd.li/i/14392363',
         },
       ],
@@ -606,78 +625,6 @@ export default defineAppConfig({
             'https://i.gkd.li/i/14662147',
             'https://i.gkd.li/i/14532946', // 避免在此页面误触
           ],
-        },
-      ],
-    },
-    {
-      key: 27,
-      name: '分段广告-订阅号消息页面广告',
-      desc: '点击[广告]-点击[不感兴趣]-点击[与我无关]-点击[确定]',
-      activityIds:
-        'com.tencent.mm.plugin.brandservice.ui.flutter.BizFlutterTLFlutterViewActivity',
-      rules: [
-        {
-          key: 0,
-          name: '点击[广告]',
-          actionCd: 3000,
-          forcedTime: 3000,
-          position: {
-            left: 'width * 0.8805',
-            top: 'width * 0.0583',
-          },
-          excludeMatches: '[desc="订阅号消息"] +(2, 3) View[clickable=true]',
-          matches:
-            'View[visibleToUser=true] - View[desc!="常​看​的​号​"] > View[desc="广告"||desc=null][visibleToUser=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/9fc6137e-b615-46cf-b22e-20c62e398f45',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14544716',
-            'https://i.gkd.li/i/14545735',
-            'https://i.gkd.li/i/14548771', // 避免在此页面误触
-            'https://i.gkd.li/i/14549306', // 避免在此页面误触
-          ],
-        },
-        {
-          preKeys: 0,
-          key: 1,
-          name: '点击[不感兴趣]',
-          forcedTime: 3000,
-          position: {
-            left: 'width * 0.5271',
-            top: 'width * 0.3419',
-          },
-          matches: '[desc="订阅号消息"] +(2, 3) View[clickable=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/e69e887e-5093-4f2a-ad2e-15b3f0a92481',
-          snapshotUrls: 'https://i.gkd.li/i/14544688',
-        },
-        {
-          preKeys: 1,
-          key: 2,
-          name: '点击[与我无关]',
-          forcedTime: 3000,
-          position: {
-            left: 'width * 0.1864',
-            top: 'width * 0.3419',
-          },
-          matches: '[desc="订阅号消息"] +(2, 3) View[clickable=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/ffc05f2d-e8ab-4f0d-a937-23c71f92e8b8',
-          snapshotUrls: 'https://i.gkd.li/i/14544684',
-        },
-        {
-          preKeys: 2,
-          key: 3,
-          name: '点击[确定]',
-          forcedTime: 3000,
-          position: {
-            left: 'width * 0.8641',
-            top: 'width * 0.1209',
-          },
-          matches: '[desc="订阅号消息"] +(2, 3) View[clickable=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/c49a8bd0-c947-48b5-9381-d56f13257061',
-          snapshotUrls: 'https://i.gkd.li/i/14544683',
         },
       ],
     },

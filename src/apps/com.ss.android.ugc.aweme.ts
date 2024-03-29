@@ -172,11 +172,13 @@ export default defineAppConfig({
     },
     {
       key: 13,
-      name: '功能类-添加快捷方式到桌面',
+      name: '功能类-[添加快捷方式到桌面]弹窗',
+      desc: '关闭弹窗',
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
+          key: 0,
           name: '搜索快捷方式',
           activityIds:
             'com.ss.android.ugc.aweme.search.activity.SearchResultActivity',
@@ -185,20 +187,27 @@ export default defineAppConfig({
           snapshotUrls: 'https://i.gkd.li/i/13338556',
         },
         {
+          key: 1,
           name: '商城快捷方式',
-          activityIds: 'com.ss.android.ugc.aweme.main.MainActivity',
+          quickFind: true,
+          activityIds: [
+            'com.ss.android.ugc.aweme.main.MainActivity',
+            'com.ss.android.ugc.aweme.live.LiveDummyActivity',
+          ],
           matches:
             '[text="添加抖音商城到桌面"] +2 LinearLayout > [text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/13669682',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13669682',
+            'https://i.gkd.li/i/14740312',
+          ],
         },
         {
+          key: 2,
           name: '搜索组件',
           quickFind: true,
           activityIds:
             'com.ss.android.ugc.aweme.search.activity.SearchResultActivity',
           matches: '[text="暂不开启"][clickable=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/b06cba6d-cb80-4999-8c0b-309d86f7a7a3',
           snapshotUrls: 'https://i.gkd.li/i/14325749',
         },
       ],
@@ -262,6 +271,22 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/ef703cd7-99af-4e10-8345-9860ed160b8b',
           snapshotUrls: 'https://i.gkd.li/i/14585377',
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '权限提示-请求访问通讯录弹窗',
+      desc: '点击[拒绝]',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          quickFind: true,
+          matches: '[text$="想访问你的通讯录"] +2 * >2 [text="拒绝"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/8f70418d-92f0-4264-83fd-a680350c478e',
+          snapshotUrls: 'https://i.gkd.li/i/14735280',
         },
       ],
     },

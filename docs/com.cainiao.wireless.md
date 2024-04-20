@@ -1,6 +1,6 @@
 # 菜鸟
 
-存在 7 规则组 - [com.cainiao.wireless](/src/apps/com.cainiao.wireless.ts)
+存在 8 规则组 - [com.cainiao.wireless](/src/apps/com.cainiao.wireless.ts)
 
 ## 全屏广告-弹窗广告
 
@@ -9,6 +9,7 @@
 - [快照-0](https://i.gkd.li/i/12914371)
 - [快照-1](https://i.gkd.li/i/13692758)
 - [快照-2](https://i.gkd.li/i/13042279)
+- [快照-3](https://i.gkd.li/i/14033859)
 
 ## 局部广告-包裹页面-地图底部横条广告
 
@@ -33,6 +34,7 @@
 默认禁用
 
 - [快照-0](https://i.gkd.li/i/13692761)
+- [快照-1](https://i.gkd.li/i/14969859)
 
 ## 全屏广告-今日手气红包
 
@@ -45,3 +47,11 @@
 默认禁用 - 点击X
 
 - [快照-0](https://i.gkd.li/i/14033859)
+
+## 功能类-询问[是否要查询包裹]弹窗
+
+默认禁用 - 点击[立即查看]
+
+- [示例-0](https://m.gkd.li/57941037/eb48e137-66c3-4777-b65e-8f4f6b3bc4ee)
+
+- [快照-0](https://i.gkd.li/i/14913359)

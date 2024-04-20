@@ -1,6 +1,6 @@
 # 抖音
 
-存在 16 规则组 - [com.ss.android.ugc.aweme](/src/apps/com.ss.android.ugc.aweme.ts)
+存在 17 规则组 - [com.ss.android.ugc.aweme](/src/apps/com.ss.android.ugc.aweme.ts)
 
 ## 局部广告-关闭用户推荐
 
@@ -28,7 +28,7 @@
 
 - [快照-0](https://i.gkd.li/i/12749276)
 
-## 全屏广告-广告弹窗
+## 全屏广告-弹窗广告
 
 默认禁用
 
@@ -102,9 +102,9 @@
 
 默认禁用 - 点击[知道了]
 
-- [示例-0](https://m.gkd.li/57941037/385f4262-d744-4482-887c-be2e1f0c0943)
-
 - [快照-0](https://i.gkd.li/i/14533732)
+- [快照-1](https://i.gkd.li/i/14969825)
+- [快照-2](https://i.gkd.li/i/14969835)
 
 ## 全屏广告-低价秒杀券弹窗
 
@@ -121,3 +121,12 @@
 - [示例-0](https://m.gkd.li/57941037/8f70418d-92f0-4264-83fd-a680350c478e)
 
 - [快照-0](https://i.gkd.li/i/14735280)
+
+## 青少年模式
+
+默认禁用
+
+- [快照-0](https://i.gkd.li/i/14321107)
+- [快照-1](https://i.gkd.li/i/14473006)
+- [快照-2](https://i.gkd.li/i/14567078)
+- [快照-3](https://i.gkd.li/i/14917848)

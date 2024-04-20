@@ -3,7 +3,7 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.sankuai.meituan',
   name: '美团',
-  deprecatedKeys: [5, 6],
+  deprecatedKeys: [5, 6, 9],
   groups: [
     {
       key: 1,
@@ -22,7 +22,7 @@ export default defineAppConfig({
     },
     {
       key: 2,
-      name: '全屏广告-广告弹窗',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
@@ -50,7 +50,7 @@ export default defineAppConfig({
         },
         {
           key: 3,
-          name: '超市便利-广告弹窗',
+          name: '超市便利-弹窗广告',
           activityIds:
             'com.sankuai.waimai.store.poi.list.newp.PoiVerticalityHomeActivity',
           matches:
@@ -64,6 +64,23 @@ export default defineAppConfig({
           matches:
             'View[childCount=3] > View + TextView + TextView[text=""][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/12739204',
+        },
+        {
+          key: 5,
+          name: '订单完成后的红包弹窗',
+          quickFind: true,
+          activityIds:
+            'com.sankuai.waimai.bussiness.order.detail.WMOrderDetailActivity',
+          matches: '@ImageView[clickable=true] - * >3 [text="开心收下"]',
+          snapshotUrls: 'https://i.gkd.li/i/13695703',
+        },
+        {
+          key: 6,
+          name: '邀请好友提现弹窗',
+          activityIds: 'com.meituan.msc.modules.container.MSCActivity',
+          matches:
+            'WebView > View[childCount=11] > View[childCount=1] >2 View[childCount=2] > Image[visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/14964911',
         },
       ],
     },
@@ -154,20 +171,6 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 9,
-      name: '全屏广告-订单完成后的红包弹窗',
-      desc: '点击关闭',
-      quickFind: true,
-      rules: [
-        {
-          activityIds:
-            'com.sankuai.waimai.bussiness.order.detail.WMOrderDetailActivity',
-          matches: '@ImageView[clickable=true] - * >3 [text="开心收下"]',
-          snapshotUrls: 'https://i.gkd.li/i/13695703',
-        },
-      ],
-    },
-    {
       key: 10,
       name: '全屏广告-新人返场特惠',
       desc: '点击右上角返回',
@@ -178,7 +181,7 @@ export default defineAppConfig({
     },
     {
       key: 11,
-      name: '全屏广告-视频页广告弹窗',
+      name: '全屏广告-视频页弹窗广告',
       desc: '点击X',
       rules: [
         {

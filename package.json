@@ -1,5 +1,5 @@
 {
-  "name": "@gkd-sub-repo/114514_subscription",
+  "name": "gkd-subscription-114514",
   "type": "module",
   "version": "1.45.0",
   "main": "./dist/114514_gkd.json5",

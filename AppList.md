@@ -236,7 +236,7 @@
 | 风筝影评               | [com.fzfengzheng.fzboyp](/docs/com.fzfengzheng.fzboyp.md)                                                                                                         | 2      |
 | 纷玩岛                 | [cn.com.livelab](/docs/cn.com.livelab.md)                                                                                                                         | 1      |
 | 富民银行               | [com.fbank.mobile](/docs/com.fbank.mobile.md)                                                                                                                     | 1      |
-| 高德地图               | [com.autonavi.minimap](/docs/com.autonavi.minimap.md)                                                                                                             | 7      |
+| 高德地图               | [com.autonavi.minimap](/docs/com.autonavi.minimap.md)                                                                                                             | 8      |
 | 稿定设计               | [com.hlg.daydaytobusiness](/docs/com.hlg.daydaytobusiness.md)                                                                                                     | 1      |
 | 高佣联盟               | [com.shangfang.gylm](/docs/com.shangfang.gylm.md)                                                                                                                 | 1      |
 | 个人图书馆             | [com.doc360.client](/docs/com.doc360.client.md)                                                                                                                   | 1      |

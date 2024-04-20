@@ -43,18 +43,20 @@ export default defineAppConfig({
       key: 4,
       name: '功能类-原神自动签到',
       desc: '点击签到-关闭弹窗-返回',
+      forcedTime: 5000,
       activityIds: 'com.mihoyo.hyperion.web2.MiHoYoWebActivity',
       rules: [
         {
           key: 0,
           name: '点击签到',
           matches:
-            '[text="米游社原神每日签到"] >4 View[childCount=11] > @View[childCount=3][clickable=true] > Image[index=0]',
+            '[text="米游社原神每日签到"] >4 View[childCount=11] > @View[childCount=3][visibleToUser=true] > Image[index=0]',
           exampleUrls:
             'https://m.gkd.li/57941037/6654679e-58a9-4d6c-85a3-11bd2f82c15e',
           snapshotUrls: [
             'https://i.gkd.li/i/14369790', // 签到前
             'https://i.gkd.li/i/14371469', // 签到后，避免在此页面误触
+            'https://i.gkd.li/i/14967627', // clickable=false
           ],
         },
         {
@@ -62,7 +64,7 @@ export default defineAppConfig({
           key: 1,
           name: '关闭签到后的弹窗',
           matches:
-            '[text="米游社原神每日签到"] >3 TextView[index=2][clickable=true]',
+            '[text="米游社原神每日签到"] >3 TextView[index=2][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/b02eca70-f7d3-4169-99d6-9906c534392a',
           snapshotUrls: 'https://i.gkd.li/i/14371439',
@@ -83,6 +85,7 @@ export default defineAppConfig({
       key: 5,
       name: '功能类-星穹铁道自动签到',
       desc: '点击签到-关闭弹窗-返回',
+      forcedTime: 5000,
       activityIds: 'com.mihoyo.hyperion.web2.MiHoYoWebActivity',
       rules: [
         {
@@ -102,10 +105,13 @@ export default defineAppConfig({
           key: 1,
           name: '关闭签到后的弹窗',
           matches:
-            '[text="《崩坏：星穹铁道》签到福利"] >3 TextView[clickable=true]',
+            '[text="《崩坏：星穹铁道》签到福利"] >3 TextView[visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/3babb231-30a7-4891-9c4a-c11946838741',
-          snapshotUrls: 'https://i.gkd.li/i/14371787',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14371787',
+            'https://i.gkd.li/i/14967631', // clickable=false
+          ],
         },
         {
           preKeys: 1,

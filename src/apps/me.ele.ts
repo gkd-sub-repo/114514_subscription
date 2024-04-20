@@ -116,7 +116,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '全屏广告-付款后广告弹窗',
+      name: '全屏广告-付款后弹窗广告',
       quickFind: true,
       activityIds: 'me.ele.component.pops2.TransparentAppWebActivity',
       rules: 'bb Button[text="关闭"]',
@@ -133,9 +133,10 @@ export default defineAppConfig({
     {
       key: 7,
       name: '局部广告-首页底部浮窗广告',
+      quickFind: true,
       activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
       rules:
-        'LinearLayout >n FrameLayout >n ViewGroup[childCount=3] + ViewGroup[clickable=true]',
+        '@ViewGroup[childCount=0][clickable=true] - ViewGroup[childCount=3] <<n [id="me.ele:id/id_magex_mist_view"]',
       snapshotUrls: 'https://i.gkd.li/i/13710588',
     },
     {

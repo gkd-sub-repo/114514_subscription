@@ -87,10 +87,12 @@ export default defineAppConfig({
     },
     {
       key: 14,
-      name: '全屏广告-[欢迎]弹窗',
+      name: '全屏广告-弹窗广告',
       desc: '点击关闭',
       rules: [
         {
+          key: 0,
+          name: '[欢迎]弹窗',
           quickFind: true,
           activityIds: 'com.autonavi.map.activity.NewMapActivity',
           matches:
@@ -98,6 +100,32 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/660ef360-eee8-4fb8-9764-7a1822ccb6e9',
           snapshotUrls: 'https://i.gkd.li/i/14800704',
+        },
+        {
+          key: 1,
+          name: '签到弹窗',
+          quickFind: true,
+          activityIds: 'com.autonavi.map.activity.NewMapActivity',
+          matches: '[vid="main_map_msg_dialog_close"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/e059109b-f4bb-4ed6-81a8-6010b51ebfd5',
+          snapshotUrls: 'https://i.gkd.li/i/14809993',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '功能类-一键点亮角落',
+      desc: '点击[一键点亮]',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.autonavi.map.activity.NewMapActivity',
+          matches:
+            '[text="一键点亮"] <2 @[clickable=true] <<n [vid="mapInteractiveRelativeLayout"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/1fd33208-e81d-4da6-a23c-4d562a8e0ae0',
+          snapshotUrls: 'https://i.gkd.li/i/14881505',
         },
       ],
     },

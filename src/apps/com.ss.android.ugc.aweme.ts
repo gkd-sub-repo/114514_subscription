@@ -89,7 +89,7 @@ export default defineAppConfig({
     },
     {
       key: 5,
-      name: '全屏广告-广告弹窗',
+      name: '全屏广告-弹窗广告',
       activityIds: 'com.android.launcher.Launcher',
       quickFind: true,
       rules:
@@ -247,11 +247,21 @@ export default defineAppConfig({
       rules: [
         {
           quickFind: true,
-          activityIds: 'com.ss.android.ugc.aweme.live.LiveDummyActivity',
-          matches: '[text="去首页商城，查订单更方便"] +2 [text="知道了"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/385f4262-d744-4482-887c-be2e1f0c0943',
-          snapshotUrls: 'https://i.gkd.li/i/14533732',
+          activityIds: [
+            'com.ss.android.ugc.aweme.live.LiveDummyActivity',
+            'com.ss.android.ugc.aweme.commerce.sdk.MallContainerActivity',
+            'com.bytedance.android.shopping.store.tabkit.container.TabKitActivity',
+          ],
+          matches: [
+            'FlattenUIText[text*="首页商城"]',
+            'FlattenUIText[text="去看看"]',
+            'FlattenUIText[text="知道了"]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/14533732',
+            'https://i.gkd.li/i/14969825',
+            'https://i.gkd.li/i/14969835',
+          ],
         },
       ],
     },
@@ -287,6 +297,25 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/8f70418d-92f0-4264-83fd-a680350c478e',
           snapshotUrls: 'https://i.gkd.li/i/14735280',
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '青少年模式',
+      quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          matches: ['[text*="青少年模式"]', '[text="关闭" || desc="关闭"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/14321107',
+            'https://i.gkd.li/i/14473006',
+            'https://i.gkd.li/i/14567078',
+            'https://i.gkd.li/i/14917848', // 避免误触
+          ],
         },
       ],
     },

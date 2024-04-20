@@ -7,13 +7,27 @@ export default defineAppConfig({
     {
       key: 1,
       quickFind: true,
-      name: '全屏广告-首页广告弹窗',
+      name: '全屏广告-首页弹窗广告',
       desc: '点击X',
       rules: [
         {
           activityIds: 'cn.honor.qinxuan.MainActivity',
           matches: '[id="cn.honor.qinxuan:id/iv_close_dlg"]',
           snapshotUrls: 'https://i.gkd.li/i/13930613',
+        },
+      ],
+    },
+    {
+      key: 2,
+      name: '通知提示',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          matches: '@[vid="iv_close"] < * > [text="开启消息通知"]',
+          snapshotUrls: 'https://i.gkd.li/i/14946137',
         },
       ],
     },

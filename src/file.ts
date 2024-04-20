@@ -118,7 +118,7 @@ export const writeConfig = async (config: RawSubscription) => {
   // 更新 gkd.version.json 文件
   await fs.writeFile(
     versionFp,
-    JSON.stringify(
+    JSON5.stringify(
       { id: newConfig.id, version: newConfig.version },
       undefined,
       2,
@@ -627,21 +627,25 @@ export const updateReadMeMd = async (
                 '',
               ].join('|'),
             )
-            .join('\n') +
-          '\n\n---\n\n' +
-          '|全局规则|新增|变动|移除|\n|-|-|-|-|\n' +
-          globalDiffs
-            .map((a) =>
-              [
-                '',
-                '-',
-                a.addGlobalGroups.map((g) => '<li>' + g.name).join(''),
-                a.changeGlobalGroups.map((g) => '<li>' + g.name).join(''),
-                a.removeGlobalGroups.map((g) => '<li>' + g.name).join(''),
-                '',
-              ].join('|'),
-            )
             .join('\n'),
+        [
+          globalDiffs.length > 0
+            ? '\n\n---\n\n' +
+              '|全局规则|新增|变动|移除|\n|-|-|-|-|\n' +
+              globalDiffs
+                .map((a) =>
+                  [
+                    '',
+                    '-',
+                    a.addGlobalGroups.map((g) => '<li>' + g.name).join(''),
+                    a.changeGlobalGroups.map((g) => '<li>' + g.name).join(''),
+                    a.removeGlobalGroups.map((g) => '<li>' + g.name).join(''),
+                    '',
+                  ].join('|'),
+                )
+                .join('\n')
+            : '',
+        ],
       ].join('\n\n') + '\n';
 
     await fs.writeFile(process.cwd() + '/CHANGELOG.md', changeLogText);

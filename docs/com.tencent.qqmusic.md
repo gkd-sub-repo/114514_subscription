@@ -1,6 +1,6 @@
 # QQ音乐
 
-存在 7 规则组 - [com.tencent.qqmusic](/src/apps/com.tencent.qqmusic.ts)
+存在 9 规则组 - [com.tencent.qqmusic](/src/apps/com.tencent.qqmusic.ts)
 
 ## 局部广告-广告卡片
 
@@ -11,8 +11,9 @@
 - [快照-2](https://i.gkd.li/i/13797001)
 - [快照-3](https://i.gkd.li/i/13206982)
 - [快照-4](https://i.gkd.li/i/13218134)
+- [快照-5](https://i.gkd.li/i/15041019)
 
-## 全屏广告-首页-底部广告弹窗
+## 全屏广告-首页-底部弹窗广告
 
 默认禁用
 
@@ -47,6 +48,17 @@
 
 默认禁用 - 点击关闭
 
-- [示例-0](https://m.gkd.li/57941037/5efa87c2-5097-4c3f-b36d-2cb3bb768e8a)
-
 - [快照-0](https://i.gkd.li/i/14549936)
+
+## 评价提示-好评弹窗
+
+默认禁用 - 点击关闭
+
+- [快照-0](https://i.gkd.li/i/14881903)
+
+## 分段广告-评论区广告
+
+默认禁用 - 点击右下角展开-点击[不感兴趣]
+
+- [快照-0](https://i.gkd.li/i/15010210)
+- [快照-1](https://i.gkd.li/i/15010226)

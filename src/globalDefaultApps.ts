@@ -65,6 +65,32 @@ export const blackListAppIDs: string[] = [
   'org.koitharu.kotatsu', // Kotatsu
   'me.ash.reader', // Read You
   'com.huanchengfly.tieba.post', // 贴吧Lite
+  'com.example.c001apk', // c001apk
+  'dev.anilbeesetti.nextplayer', // Next Player
+  'org.kde.kdeconnect_tp', // KDE Connect
+  'xyz.adproqwq.GKDTool', // GKDTool
+  'com.alibaba.aliyun', // 阿里云
+
+  'com.canghai.haoka',
+  'com.xy.td',
+  'com.bug.hookvip',
+  'one.yufz.hmspush',
+  'io.github.huskydg.magisk',
+  'xzr.konabess',
+  'org.lsposed.manager',
+  'com.microsoft.office.officehub',
+  'bin.mt.plus',
+  'tw.nekomimi.nekogram',
+  'io.github.qauxv',
+  'com.rezvorck.tiktokplugin',
+  'com.zhiliaoapp.musically',
+  'com.github.tianma8023.xposed.smscode',
+  'Han.GJZS',
+  'org.adblockplus.adblockplussbrowser',
+  'com.viewblocker.jrsen',
+  'com.tsng.hidemyapplist',
+  'com.pittvandewitt.wavelet',
+  'one.yufz.onebox',
 
   // 系统自带非系统应用
   // 小米
@@ -83,6 +109,25 @@ export const blackListAppIDs: string[] = [
   'com.miui.compass', // 指南针
   'com.duokan.phone.remotecontroller', // 万能遥控
   'com.mfashiongallery.emag', // 小米画报
+
+  //三星
+  'com.samsung.android.app.cameraassistant',
+  'com.samsung.android.app.galaxyraw',
+  'com.samsung.android.appbooster',
+  'com.android.samsung.utilityapp',
+  'com.samsung.android.goodlock',
+  'com.samsung.android.thermalguardian',
+  'com.samsung.android.calendar',
+  'com.samsung.android.app.notes',
+  'com.jv.samsungeshop',
+  'com.samsung.android.app.sreminder',
+  'com.samsung.android.app.watchmanager',
+  'com.samsung.android.app.reminder',
+  'com.adguard.android.contentblocker',
+  'com.sec.android.app.music',
+  'com.sec.android.app.voicenote',
+  'com.futuremark.dmandroid.application',
+  'com.sec.android.app.clockpackage',
 
   // https://github.com/gkd-kit/gkd/issues/451
   'mark.via', // via浏览器
@@ -123,6 +168,8 @@ export const updateBlackListAppIDs = new Set([
 export const yongBlackListAppIDs = new Set([
   ...blackListAppIDs,
   'xxx.pornhub.fuck', // JavDB
+  'com.netease.cloudmusic', // 网易云音乐 全局规则在 https://i.gkd.li/i/14931708 误触
+  'com.zhihu.android', // 知乎 全局规则在 https://i.gkd.li/i/14964990 误触
   ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 
@@ -135,11 +182,8 @@ export const whiteListAppIDs: string[] = [];
 export const openAdWhiteListAppIDs = new Set([
   ...whiteListAppIDs,
   'com.bbk.theme', // i 主题
-  'com.sec.android.app.samsungapps', // 三星应用商店
   'com.bbk.appstore', // vivo应用商店
-  'com.miui.systemAdSolution', // 小米智能服务
   'com.huawei.appmarket', // 华为应用市场
-  'com.xiaomi.market', // 小米应用商店
   'com.miui.player', // 小米音乐
 ]);
 

@@ -31,7 +31,6 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '首页优惠弹窗1',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
             'FrameLayout > FrameLayout > RelativeLayout[childCount=2] > @ImageView[id!=null][clickable=true][visibleToUser=true] + ImageView',
@@ -39,7 +38,6 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          name: '首页优惠弹窗2',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
             'View[id=null] > TextView + View > View +(4) View[clickable=true] > Image[id=null]',
@@ -47,11 +45,18 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          name: '首页优惠弹窗3',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
             'ImageView < @ViewGroup[clickable=true][visibleToUser=true] < ViewGroup + ViewGroup >7 [text="开心收下"]',
           snapshotUrls: 'https://i.gkd.li/i/13761182',
+        },
+        {
+          key: 3,
+          quickFind: true,
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            '@ImageView[visibleToUser=true] < * < * +2 * [text="去抢购"]',
+          snapshotUrls: 'https://i.gkd.li/i/15032649',
         },
       ],
     },
@@ -133,8 +138,6 @@ export default defineAppConfig({
           quickFind: true,
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches: '@ImageView[clickable=true] + * >4 [text="去刮奖"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/f9f73d28-a124-41ba-9781-261a3af281c6',
           snapshotUrls: 'https://i.gkd.li/i/14456101',
         },
       ],
@@ -213,8 +216,7 @@ export default defineAppConfig({
         {
           quickFind: true,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
-          matches:
-            '[vid="iv_float_window_close"] > TextView[text=""][visibleToUser=true]',
+          matches: '[vid="iv_float_window_close"]',
           exampleUrls:
             'https://m.gkd.li/57941037/560162d0-940d-413a-8f2e-e40c21c976e2',
           snapshotUrls: 'https://i.gkd.li/i/14549415',
@@ -227,7 +229,7 @@ export default defineAppConfig({
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
-      activityIds: ['com.xunmeng.pinduoduo.ui.activity.HomeActivity'],
+      activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
       rules: [
         {
           key: 0,
@@ -235,8 +237,8 @@ export default defineAppConfig({
           action: 'clickCenter',
           matches: 'FrameLayout > TextView[text="领取今日现金"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13201422', //com.xunmeng.pinduoduo.ui.activity.HomeActivity
-            'https://i.gkd.li/i/13372677', //com.bbk.launcher2.Launcher
+            'https://i.gkd.li/i/13201422',
+            'https://i.gkd.li/i/13372677',
           ],
         },
         {
@@ -315,9 +317,16 @@ export default defineAppConfig({
             '[text="拼单返现"]',
             'WebView[text="拼多多"] >3 View[index=0] > Image[clickable=true][visibleToUser=true][childCount=0]',
           ],
-          exampleUrls:
-            'https://m.gkd.li/57941037/abc035bb-0d18-4711-b64c-a5319dd2191d',
           snapshotUrls: 'https://i.gkd.li/i/14549422',
+        },
+        {
+          key: 2,
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
+          matches: [
+            '[text="赶快邀请好友来拼单吧"]',
+            '[text$="下单成功"] + Image[visibleToUser=true]',
+          ],
+          snapshotUrls: 'https://i.gkd.li/i/15025702',
         },
       ],
     },
@@ -383,15 +392,20 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
+          key: 0,
           matches:
             'FrameLayout > ViewGroup[vid="pdd"] > ViewGroup > ViewGroup[childCount<3] > ViewGroup[childCount=3 || childCount=2] >(1,2) ImageView[clickable=true][visibleToUser=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/8f376a1e-750f-4677-af82-473f3522b67c',
           snapshotUrls: [
             'https://i.gkd.li/i/14109435',
             'https://i.gkd.li/i/14549423',
             'https://i.gkd.li/i/14662202', // 避免在此页面误触
           ],
+        },
+        {
+          key: 1,
+          quickFind: true,
+          matches: '@ImageView[clickable=true] + * >2 [text="开启通知"]',
+          snapshotUrls: 'https://i.gkd.li/i/15004580',
         },
       ],
     },
@@ -410,6 +424,23 @@ export default defineAppConfig({
             'https://i.gkd.li/i/14305741',
             'https://i.gkd.li/i/14317199',
           ],
+        },
+      ],
+    },
+    {
+      key: 19,
+      name: '全屏广告-[个性化推荐]弹窗',
+      desc: '点击[取消]',
+      quickFind: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches: ['[text="个性化推荐未开启"]', '[text="取消"]'],
+          exampleUrls:
+            'https://m.gkd.li/57941037/0dd45b10-e323-4ab0-8135-19f45115487a',
+          snapshotUrls: 'https://i.gkd.li/i/14964851',
         },
       ],
     },

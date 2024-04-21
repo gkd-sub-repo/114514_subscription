@@ -183,7 +183,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '全屏广告',
+          name: '全屏广告-1',
           quickFind: true,
           matches:
             '@[text$="跳过广告"][clickable=true] < LinearLayout > [text="VIP可关闭该广告"]',
@@ -201,14 +201,14 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          name: '全屏广告2',
+          name: '全屏广告-2',
           quickFind: true,
           matches: '@[text$="关闭广告"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/13526547',
         },
         {
           key: 3,
-          name: '居中广告',
+          name: '居中广告-1',
           matches:
             'ViewGroup[childCount>10] > FrameLayout[index=10] >4 ImageView[clickable=true][visibleToUser=true][index=1 || index=3]',
           snapshotUrls: [
@@ -219,7 +219,7 @@ export default defineAppConfig({
         },
         {
           key: 4,
-          name: '居中广告',
+          name: '居中广告-2',
           quickFind: true,
           matches: '[id="com.tencent.qqlive:id/pause_ad_close"]',
           exampleUrls:

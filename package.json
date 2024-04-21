@@ -1,7 +1,7 @@
 {
   "name": "gkd-subscription-114514",
   "type": "module",
-  "version": "1.45.0",
+  "version": "1.0.45",
   "main": "./dist/114514_gkd.json5",
   "unpkg": "./dist/114514_gkd.json5",
   "jsdelivr": "./dist/114514_gkd.json5",
@@ -20,17 +20,26 @@
     "check": "tsc --noEmit && tsx ./scripts/check.ts",
     "updateSubs": "tsx ./scripts/updateSubs.ts"
   },
+  "gkd": {
+    "outDir": "dist",
+    "file": "114514_gkd.json5",
+    "versionFile": "114514_gkd.version.json5",
+    "changelog": "CHANGELOG.md",
+    "README.md": "README.md"
+  },
   "devDependencies": {
-    "@commitlint/cli": "^19.2.1",
-    "@commitlint/config-conventional": "^19.1.0",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "@commitlint/types": "^19.0.3",
+    "@gkd-kit/api": "^0.0.5",
     "@gkd-kit/selector": "0.0.25",
+    "@gkd-kit/tools": "^0.2.0",
     "@types/lodash": "^4.17.0",
-    "@types/node": "^20.11.30",
-    "@typescript-eslint/eslint-plugin": "7.3.1",
-    "@typescript-eslint/parser": "7.3.1",
+    "@types/node": "^20.12.7",
+    "@typescript-eslint/eslint-plugin": "7.7.0",
+    "@typescript-eslint/parser": "7.7.0",
     "dayjs": "^1.11.10",
-    "eslint": "^9.0.0",
+    "eslint": "^9.1.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-define-config": "2.1.0",
     "husky": "^9.0.11",
@@ -41,7 +50,7 @@
     "pinyin-pro": "3.20.2",
     "prettier": "^3.2.5",
     "tsx": "^4.7.2",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.5"
   },
   "author": "田所浩二",
   "license": "MIT",
@@ -56,7 +65,7 @@
   "volta": {
     "node": "20.9.0"
   },
-  "packageManager": "pnpm@8.10.2",
+  "packageManager": "pnpm@9.0.4",
   "commitlint": {
     "extends": [
       "@commitlint/config-conventional"
@@ -69,8 +78,5 @@
     "*.{js,ts,jsx,tsx}": [
       "eslint --cache --fix"
     ]
-  },
-  "dependencies": {
-    "@gkd-kit/api": "^0.0.5"
   }
 }

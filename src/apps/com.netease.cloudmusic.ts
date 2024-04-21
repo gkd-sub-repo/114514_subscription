@@ -299,7 +299,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '点击关闭',
+          name: '点击关闭-1',
           matches:
             // 通过广告下方评论visibleToUser=true防止误触
             '[vid="commentVHRootId"][visibleToUser=true] - [vid="commentVHRootId"] [vid="closeAction"][clickable=true]',
@@ -307,7 +307,7 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          name: '点击关闭',
+          name: '点击关闭-2',
           matches:
             '[vid="commentVHRootId"][visibleToUser=true] - [vid="commentAdContainer"] >n [vid="adTagView"]',
           snapshotUrls: [

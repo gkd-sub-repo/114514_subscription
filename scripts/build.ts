@@ -1,4 +1,7 @@
-import subsConfig from '../src/config';
-import { writeConfig } from '../src/file';
+import { updateDist } from '@gkd-kit/tools';
+import subscription from './check';
+import { updateReadMeMd } from '../src/updateMd';
 
-await writeConfig(subsConfig);
+await updateDist(subscription);
+
+await updateReadMeMd();

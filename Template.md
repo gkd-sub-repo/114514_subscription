@@ -18,7 +18,7 @@
 - npmmirror源（推荐）
 
 ```txt
-https://registry.npmmirror.com/gkd-subscription-114514/latest/files/dist/114514_gkd.json5
+https://registry.npmmirror.com/@kunjinkao/gkd-subscription/latest/files/dist/114514_gkd.json5
 ```
 
 - gitmirror源

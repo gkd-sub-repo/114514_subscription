@@ -18,7 +18,7 @@
 - npmmirror源（推荐）
 
 ```txt
-https://registry.npmmirror.com/@aisouler/gkd_subscription/latest/files/dist/AIsouler_gkd.json5
+https://registry.npmmirror.com/gkd-subscription-114514/latest/files/dist/114514_gkd.json5
 ```
 
 - gitmirror源
@@ -30,10 +30,10 @@ https://raw.gitmirror.com/gkd-sub-repo/114514_subscription/main/dist/114514_gkd.
 - jsDelivr源
 
 ```txt
-https://cdn.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.json5
+https://cdn.jsdelivr.net/gh/gkd-sub-repo/114514_subscription@main/dist/114514_gkd.json5
 ```
 
-当前版本: v45
+当前版本: v46
 
 当前订阅文件已适配 724 个应用，共有 1693 应用规则组，3 全局规则组
 
@@ -51,7 +51,7 @@ https://cdn.jsdelivr.net/gh/AIsouler/GKD_subscription@main/dist/AIsouler_gkd.jso
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=gkd-sub-repo/114514_subscription&_v=45)
+![img](https://contrib.rocks/image?repo=gkd-sub-repo/114514_subscription&_v=46)
 
 ## Star History
 

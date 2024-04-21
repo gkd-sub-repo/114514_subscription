@@ -35,7 +35,7 @@ export const updateReadMeMd = async () => {
     .replace('--APP_SIZE--', APP_SIZE)
     .replace('--GROUP_SIZE--', GROUP_SIZE)
     .replace('--GLOBALGROUP_SIZE--', GLOBALGROUP_SIZE)
-    .replace('--VERSION--', VERSION);
+    .replaceAll('--VERSION--', VERSION);
 
   // 写入 README.md 文件
   await fs.writeFile(readmeMdPath, readMeMdText);

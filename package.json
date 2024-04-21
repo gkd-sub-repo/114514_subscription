@@ -1,5 +1,5 @@
 {
-  "name": "gkd-subscription-114514",
+  "name": "@kunjinkao/gkd-subscription",
   "type": "module",
   "version": "1.0.45",
   "main": "./dist/114514_gkd.json5",

@@ -9,10 +9,7 @@ const subsConfig: RawSubscription = {
   name: '田所浩二的GKD订阅',
   author: '田所浩二',
   supportUri: 'https://github.com/gkd-sub-repo/114514_subscription/issues',
-  updateUrl:
-    'https://raw.gitmirror.com/gkd-sub-repo/114514_subscription/main/dist/114514_gkd.json5',
-  checkUpdateUrl:
-    'https://raw.gitmirror.com/gkd-sub-repo/114514_subscription/main/dist/114514_gkd.version.json',
+  checkUpdateUrl: './114514_gkd.version.json',
   globalGroups,
   categories,
   apps,

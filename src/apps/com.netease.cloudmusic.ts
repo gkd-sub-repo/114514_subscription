@@ -6,6 +6,26 @@ export default defineAppConfig({
   deprecatedKeys: [3, 9, 11, 12],
   groups: [
     {
+      key: 0,
+      name: '开屏广告',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          key: 0,
+          excludeActivityIds:
+            'com.netease.cloudmusic.music.biz.setting.activity.SettingActivity',
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15092772',
+            'https://i.gkd.li/i/15092814', // 避免误触
+          ],
+        },
+      ],
+    },
+    {
       key: 1,
       name: '分段广告-卡片广告',
       desc: '点击[X]-点击[直接关闭]/[不感兴趣]',
@@ -95,6 +115,16 @@ export default defineAppConfig({
             'https://m.gkd.li/57941037/827ebe8b-f3c6-4068-8d31-11d5b2578680',
           snapshotUrls: 'https://i.gkd.li/i/12745666',
         },
+        {
+          key: 1,
+          name: '首页卡片广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          matches: '[vid="adTagView"]',
+          snapshotUrls: 'https://i.gkd.li/i/15047096',
+        },
       ],
     },
     {
@@ -130,11 +160,19 @@ export default defineAppConfig({
         },
         {
           key: 4,
-          name: '播放页赞赏好音乐弹窗',
           quickFind: true,
+          action: 'back',
           activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
-          matches: '@ImageView[clickable=true] +3 * > [text="立即支持"]',
+          matches: '[text="赞赏功能全新升级啦"]',
           snapshotUrls: 'https://i.gkd.li/i/13848913',
+        },
+        {
+          key: 5,
+          quickFind: true,
+          action: 'back',
+          activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
+          matches: '[text="立即限免体验"]',
+          snapshotUrls: 'https://i.gkd.li/i/15125892',
         },
       ],
     },
@@ -185,11 +223,15 @@ export default defineAppConfig({
         {
           key: 6,
           action: 'back',
-          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
-          matches: '[text="VIP歌曲免费听30分钟"]',
+          activityIds: [
+            'com.netease.cloudmusic.activity.MainActivity',
+            'com.netease.cloudmusic.activity.PlayerActivity',
+          ],
+          matches: '[text*="免费听30分钟"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13804534',
             'https://i.gkd.li/i/12843383',
+            'https://i.gkd.li/i/13804534',
+            'https://i.gkd.li/i/15047126',
           ],
         },
         {
@@ -211,11 +253,12 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          matches: '[id="com.netease.cloudmusic:id/md_dialog_cm_close_btn"]',
+          matches: ['[text*="新版本"]', '[text="近期不再提示"]'],
           snapshotUrls: [
             'https://i.gkd.li/i/13233790',
             'https://i.gkd.li/i/13197457',
             'https://i.gkd.li/i/13228878',
+            'https://i.gkd.li/i/15092457', // 避免误触
           ],
         },
       ],

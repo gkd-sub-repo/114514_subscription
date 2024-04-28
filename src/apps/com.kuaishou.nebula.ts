@@ -15,10 +15,18 @@ export default defineAppConfig({
     {
       key: 2,
       name: '全屏广告-朋友推荐弹窗',
-      activityIds: 'com.yxcorp.gifshow.HomeActivity',
-      quickFind: true,
-      rules: '@[vid="close_btn"] + [text="朋友推荐"]',
-      snapshotUrls: 'https://i.gkd.li/i/14310639',
+      rules: [
+        {
+          key: 0,
+          quickFind: true,
+          activityIds: 'com.yxcorp.gifshow.HomeActivity',
+          matches: '@[vid="close_btn"] <n * > [text="朋友推荐"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14310639',
+            'https://i.gkd.li/i/15061832',
+          ],
+        },
+      ],
     },
     {
       key: 3,
@@ -28,10 +36,14 @@ export default defineAppConfig({
           key: 1,
           quickFind: true,
           activityIds: 'com.yxcorp.gifshow.HomeActivity',
-          matches: '@ImageView[clickable=true] -2 [text$="免费红包"]',
+          matches:
+            '@ImageView[clickable=true] - ViewGroup[childCount=3] <n * >n [text*="红包"]',
           exampleUrls:
             'https://m.gkd.li/101449500/f7bbd1db-f519-4ff9-96cb-4cb5b2f483a2',
-          snapshotUrls: 'https://i.gkd.li/i/14879912',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14879912',
+            'https://i.gkd.li/i/15061662',
+          ],
         },
       ],
     },

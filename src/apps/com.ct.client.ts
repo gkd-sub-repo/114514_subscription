@@ -6,12 +6,29 @@ export default defineAppConfig({
   deprecatedKeys: [0],
   groups: [
     {
+      key: -1,
+      name: '开屏广告',
+      quickFind: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15084759',
+            'https://i.gkd.li/i/15079224', // 全局规则在此页面误触
+          ],
+        },
+      ],
+    },
+    {
       key: 1,
       name: '功能类-软件更新/安装后的用户引导',
       quickFind: true,
       activityIds: 'com.ct.client.activity.UserGuideActivity',
       rules: '[id="com.ct.client:id/tvSkip"]',
-      snapshotUrls: ['https://i.gkd.li/i/12508971'],
+      snapshotUrls: 'https://i.gkd.li/i/12508971',
     },
     {
       key: 2,
@@ -32,11 +49,19 @@ export default defineAppConfig({
       name: '全屏广告-浮窗广告',
       desc: '会出现在首页、查询办理页面',
       quickFind: true,
-      activityIds: ['com.ct.client.common.ConfirmDialogActivity'],
+      actionMaximum: 1,
+      resetMatch: 'app',
+      activityIds: [
+        'com.ct.client.common.ConfirmDialogActivity',
+        'com.ct.client.activity.MainActivity',
+      ],
       rules: [
         {
-          matches: 'ImageView[id="com.ct.client:id/close"]',
-          snapshotUrls: ['https://i.gkd.li/i/12819676'],
+          matches: '[vid="rlActivity"] > [vid="close"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12819676',
+            'https://i.gkd.li/i/15104434',
+          ],
         },
       ],
     },
@@ -44,11 +69,9 @@ export default defineAppConfig({
       key: 4,
       name: '全屏广告-弹窗广告',
       // quickFind: true, 实机测试使用无法跳过
-      activityIds: [
-        'com.ct.client.common.webview.OnlineBusinessWebkitActivity',
-      ],
+      activityIds: 'com.ct.client.common.webview.OnlineBusinessWebkitActivity',
       rules: 'Image[text="tishi-close"]',
-      snapshotUrls: ['https://i.gkd.li/i/12913804'],
+      snapshotUrls: 'https://i.gkd.li/i/12913804',
     },
     {
       key: 5,
@@ -80,6 +103,23 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/a97bf7a2-6e35-4922-ad0d-8677fca79f7c',
           snapshotUrls: 'https://i.gkd.li/i/13043345',
+        },
+      ],
+    },
+    {
+      key: 7,
+      name: '局部广告-悬浮广告',
+      desc: '点击关闭',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.ct.client.activity.MainActivity',
+          matches: '[vid="ivFloatClose"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/5dd9c9e3-f290-4b73-abdd-dc5e97a99772',
+          snapshotUrls: 'https://i.gkd.li/i/15137220',
         },
       ],
     },

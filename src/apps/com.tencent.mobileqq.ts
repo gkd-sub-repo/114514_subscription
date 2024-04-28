@@ -166,6 +166,15 @@ export default defineAppConfig({
             'https://i.gkd.li/i/12914886',
           ],
         },
+        {
+          key: 4,
+          quickFind: true,
+          activityIds:
+            'com.tencent.mobileqq.activity.QPublicTransFragmentActivity',
+          matches:
+            'ViewGroup[childCount=6] > @ViewGroup[index=2][clickable=true][visibleToUser=true] <<n [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/15136939',
+        },
       ],
     },
     {
@@ -343,17 +352,21 @@ export default defineAppConfig({
       key: 13,
       name: '开屏广告-QQ小程序开屏广告',
       desc: '点击右下角跳过',
+      actionMaximum: 1,
       activityIds: [
         'com.tencent.mobileqq.mini.appbrand.ui.AppBrandUI',
         'com.tencent.mobileqq.activity.miniaio.MiniChatActivity',
       ],
       rules: [
         {
-          matches:
-            'TextView[text = "广告"] < RelativeLayout + RelativeLayout TextView[text = "跳过"]',
+          matches: [
+            '[text="广告"][visibleToUser=true]',
+            '[text="跳过"][visibleToUser=true]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/12877215',
             'https://i.gkd.li/i/12919195',
+            'https://i.gkd.li/i/15130235',
           ],
         },
       ],
@@ -608,12 +621,9 @@ export default defineAppConfig({
         {
           key: 1,
           name: '个性装扮弹窗',
-          activityIds:
-            'com.tencent.mobileqq.profilecard.activity.FriendProfileCardActivity',
-          matches: '[desc="关闭浮层"][clickable=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/c56c0d50-48b7-4649-9460-d40b73d3594e',
-          snapshotUrls: 'https://i.gkd.li/i/14345395',
+          activityIds: 'cooperation.vip.ad.UserLeadingActivity',
+          matches: '[desc="关闭"][visibleToUser=true]', // 右侧关闭按钮无效
+          snapshotUrls: 'https://i.gkd.li/i/15137056',
         },
       ],
     },
@@ -623,10 +633,11 @@ export default defineAppConfig({
       desc: '点击关闭',
       rules: [
         {
+          quickFind: true,
           activityIds:
             'com.tencent.mobileqq.activity.TeamWorkDocEditBrowserActivity',
           matches:
-            '[id="com.tencent.mobileqq:id/webview"] >3 View[childCount=14] > View[index=8] > View > TextView[clickable=true]',
+            '@TextView[clickable=true] + * > [text^="使用 APP"] <<n [vid="webview"]',
           exampleUrls:
             'https://m.gkd.li/57941037/6efc2dfd-79f3-43b5-bf20-f59a88295ddb',
           snapshotUrls: 'https://i.gkd.li/i/14188983',
@@ -687,7 +698,10 @@ export default defineAppConfig({
         {
           quickFind: true,
           activityIds: 'com.tencent.mobileqq.activity.QQBrowserActivity',
-          matches: 'RelativeLayout[childCount=2] > [text="关闭"]',
+          matches: [
+            'TextView[text="入群申请中"][visibleToUser=true]',
+            'TextView[text="关闭"][visibleToUser=true]',
+          ],
           exampleUrls:
             'https://m.gkd.li/57941037/df526685-8a68-48cd-8328-0292079ff030',
           snapshotUrls: 'https://i.gkd.li/i/14235163',
@@ -698,24 +712,23 @@ export default defineAppConfig({
       key: 30,
       name: '局部广告-动态页-卡片广告',
       desc: '点击关闭',
+      quickFind: true,
       rules: [
         {
           key: 0,
-          quickFind: true,
           position: {
             left: 'width * 0.9534',
             top: 'width * 0.0805',
           },
           activityIds: 'com.tencent.mobileqq.activity.SplashActivity',
           matches:
-            '@View[clickable=false] <<3 LinearLayout <<n LinearLayout[childCount=4] <<3 FrameLayout + * >2 [text="动态"]',
+            'LinearLayout[childCount=4] > LinearLayout > FrameLayout > FrameLayout > @View[visibleToUser=true] <<n [vid="root"]',
           exampleUrls:
             'https://m.gkd.li/57941037/940f4965-0058-4101-ab62-20d131e9c1d1',
           snapshotUrls: 'https://i.gkd.li/i/14732983',
         },
         {
           key: 1,
-          quickFind: true,
           activityIds: [
             'com.tencent.mobileqq.activity.SplashActivity',
             'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',

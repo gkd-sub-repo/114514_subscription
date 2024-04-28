@@ -53,20 +53,23 @@ export default defineAppConfig({
         {
           key: 3,
           quickFind: true,
+          forcedTime: 3000,
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
-            '@ImageView[visibleToUser=true] < * < * +2 * [text="去抢购"]',
-          snapshotUrls: 'https://i.gkd.li/i/15032649',
+            '@ImageView[visibleToUser=true] < * < * +(1,2) * [text="去抢购"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15032649',
+            'https://i.gkd.li/i/15076322',
+          ],
         },
       ],
     },
     {
       key: 3,
-      name: '全屏广告-活动弹窗',
+      name: '全屏广告-弹窗广告',
       rules: [
         {
           key: 0,
-          name: '抽免单活动1',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
             'TextView[text="免单特权"] < View < View +(5) View[clickable=true] > Image[id=null]',
@@ -74,7 +77,6 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          name: '抽免单活动2',
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
             'TextView[text$="抽免单"] -(2) Image[id=null][clickable=true]',
@@ -82,7 +84,6 @@ export default defineAppConfig({
         },
         {
           key: 2,
-          name: '抽免单活动3',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
             '[text="多多免单"] >5 View[childCount=2] > Image[index=0][clickable=true][visibleToUser=true]',
@@ -90,12 +91,19 @@ export default defineAppConfig({
         },
         {
           key: 3,
-          name: '抽免单活动4',
           quickFind: true,
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
             '@ImageView[visibleToUser=true] < * +2 * >3 [text="立即抽免单"]',
           snapshotUrls: 'https://i.gkd.li/i/14614135',
+        },
+        {
+          key: 4,
+          quickFind: true,
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            '@ViewGroup[clickable=true] - ViewGroup[childCount=3] >2 [text="其他"]',
+          snapshotUrls: 'https://i.gkd.li/i/15103543',
         },
       ],
     },
@@ -170,7 +178,7 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '局部广告-多多视频悬浮窗广告',
+      name: '局部广告-悬浮广告',
       desc: '点击关闭',
       activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
       rules: [
@@ -189,6 +197,15 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/bfe9f8d5-2c13-4dbf-a0b3-a8347068afa6',
           snapshotUrls: 'https://i.gkd.li/i/12642058',
+        },
+        {
+          key: 2,
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches:
+            'RelativeLayout[childCount=2] > RelativeLayout + @FrameLayout[childCount=1][clickable=true][visibleToUser=true] > ImageView[childCount=0][visibleToUser=true]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/e1d297dd-b555-4c2c-b7f6-2756aadb6006',
+          snapshotUrls: 'https://i.gkd.li/i/15140800',
         },
       ],
     },
@@ -404,8 +421,12 @@ export default defineAppConfig({
         {
           key: 1,
           quickFind: true,
-          matches: '@ImageView[clickable=true] + * >2 [text="开启通知"]',
-          snapshotUrls: 'https://i.gkd.li/i/15004580',
+          action: 'back',
+          matches: '[text="及时获取物流消息"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15004580',
+            'https://i.gkd.li/i/15048085',
+          ],
         },
       ],
     },

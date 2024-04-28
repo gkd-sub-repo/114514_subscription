@@ -128,7 +128,7 @@ export default defineAppConfig({
           key: 3,
           activityIds: 'com.sina.weibo.feed.MPDialogActivity',
           matches:
-            '[text^="今日签到"] <n * + @TextView[clickable=true] <<n [vid="container"]',
+            '[text^="今日签到"] <n * + @TextView[visibleToUser=true] <<n [vid="container"]',
           snapshotUrls: 'https://i.gkd.li/i/14969848',
         },
         {
@@ -324,6 +324,46 @@ export default defineAppConfig({
           activityIds: 'com.sina.weibo.photoalbum.imageviewer.ImageViewer',
           matches: '@LinearLayout >3 [vid="tv_dialog_item"][text^="原图"]',
           snapshotUrls: 'https://i.gkd.li/i/13929119',
+        },
+      ],
+    },
+    {
+      key: 20,
+      name: '功能类-超话自动签到',
+      quickFind: true,
+      rules: [
+        {
+          key: 0,
+          name: '点击签到',
+          activityIds: 'com.sina.weibo.supergroup.SGPageActivity',
+          // excludeMatches: ['[text="关注"]', '[text="Follow"]'], 此写法会导致误触
+          matches: [
+            'ViewGroup[childCount=2] > [text="管理"][visibleToUser=true]',
+            '[text="签到" || text="Sign in"] < [vid="right_button"][visibleToUser=true]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/15092999',
+            'https://i.gkd.li/i/15092970', // 未关注超话防止误触
+            'https://i.gkd.li/i/15136801',
+          ],
+        },
+        {
+          key: 1,
+          name: '取消勾选[接收本超话签到提醒推送]',
+          activityIds: 'com.sina.weibo.supergroup.pagepop.PagePopActivity',
+          matches: '@[checked=true] < * > [text="接收本超话签到提醒推送"]',
+          snapshotUrls: 'https://i.gkd.li/i/15103524',
+        },
+        {
+          key: 2,
+          name: '关闭签到成功弹窗',
+          activityIds: 'com.sina.weibo.supergroup.pagepop.PagePopActivity',
+          matches: ['[text^="连续签到"]', '[vid="iv_close_v2"]'],
+          snapshotUrls: [
+            'https://i.gkd.li/i/15103524',
+            'https://i.gkd.li/i/15136825',
+            'https://i.gkd.li/i/15136842',
+          ],
         },
       ],
     },

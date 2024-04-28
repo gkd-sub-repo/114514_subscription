@@ -3,7 +3,6 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.eg.android.AlipayGphone',
   name: '支付宝',
-  deprecatedKeys: [10, 15, 18],
   groups: [
     {
       key: 0,
@@ -178,11 +177,13 @@ export default defineAppConfig({
         {
           quickFind: true,
           activityIds: 'com.alipay.android.msp.ui.views.MspContainerActivity',
-          matches:
-            '@[text$="不再提醒"] <<2 * <3 * - FrameLayout[childCount=3] [text="下次支付用花呗"]',
+          matches: ['[text="同意协议并开通"]', '[text="30天不再提醒"]'],
           exampleUrls:
             'https://m.gkd.li/57941037/8daecaeb-35f0-4f3a-8d5a-a19098a992d5',
-          snapshotUrls: 'https://i.gkd.li/i/14060628',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14060628',
+            'https://i.gkd.li/i/15050300',
+          ],
         },
       ],
     },

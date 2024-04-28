@@ -259,16 +259,22 @@ export default defineAppConfig({
           name: '贴吧页签到',
           activityIds: 'com.baidu.tieba.forum.ForumActivity',
           matches:
-            'WebView[text="frs"] > View > View > View > View > TextView[text="签到"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/13776801',
+            'WebView[text="frs"] > View > View > View > View > TextView[text="签到"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13776801',
+            'https://i.gkd.li/i/15087289',
+          ],
         },
         {
           key: 1,
-          name: '签到成功-弹窗',
+          name: '关闭签到成功弹窗',
           activityIds: 'com.baidu.tbadk.browser.TBWebContainerActivity',
           matches:
-            'WebView[text="签到弹窗"] > View > View > TextView[text=""][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/13776424',
+            'WebView[text="签到弹窗"] > View > View > TextView[text=""][index=2][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13776424',
+            'https://i.gkd.li/i/15087327',
+          ],
         },
       ],
     },
@@ -296,12 +302,19 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'com.baidu.tieba.tblauncher.MainTabActivity',
+          activityIds: [
+            'com.baidu.tieba.tblauncher.MainTabActivity',
+            'com.baidu.tbadk.browser.TBWebContainerActivity',
+          ],
           matches:
-            '[text="会员弹窗"] >3 Image[clickable=true][index=2][text!=null]',
+            'WebView[text="会员弹窗" || text="一键签到"] >3 TextView + Image[text!=null][childCount=0][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/dd2f2a00-e9d3-47fa-986d-09ae6180d932',
-          snapshotUrls: 'https://i.gkd.li/i/14630806',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14630806',
+            'https://i.gkd.li/i/15119439',
+            'https://i.gkd.li/i/15119451',
+          ],
         },
       ],
     },

@@ -13,8 +13,7 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       // matchDelay: 3000, 想不起来为啥加的了，先删掉
-      rules:
-        '[text*="更新应用版本"] < ScrollView + [text="取消"][focusable=true]',
+      rules: ['[text*="更新应用版本"]', '[text="取消"]'],
       snapshotUrls: [
         'https://i.gkd.li/i/12650280',
         'https://i.gkd.li/i/13206819',
@@ -36,7 +35,7 @@ export default defineAppConfig({
             'me.ele.shopdetailv2.ShopDetailV2Activity',
           ],
           matches:
-            '[id="me.ele:id/id_magex_mistview"] >n ViewGroup + ImageView',
+            'ViewGroup[childCount=2] > @ImageView[index=1][clickable=true] <<n [id="me.ele:id/id_magex_mistview"]',
           snapshotUrls: [
             'https://i.gkd.li/i/12650238',
             'https://i.gkd.li/i/13294893',
@@ -79,17 +78,18 @@ export default defineAppConfig({
             'me.ele.android.emagex.container.EMagexActivity',
           ],
           matches:
-            '@ImageView[clickable=true] - ImageView < [id="me.ele:id/id_magex_mistview"][childCount=2]',
+            '@ImageView[clickable=true] <2 [vid="id_magex_mistview"][childCount=2]',
           snapshotUrls: [
             'https://i.gkd.li/i/12726709',
             'https://i.gkd.li/i/13476719',
             'https://i.gkd.li/i/13523508',
             'https://i.gkd.li/i/13685037',
+            'https://i.gkd.li/i/14050401',
           ],
         },
         {
           key: 2,
-          activityIds: ['me.ele.application.ui.Launcher.LauncherActivity'],
+          activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
           matches:
             '[id="me.ele:id/fl_render_e_shop"] + FrameLayout >n ViewGroup[childCount=6] > View[index=5]',
           snapshotUrls: [
@@ -99,18 +99,12 @@ export default defineAppConfig({
         },
         {
           key: 3,
-          activityIds: ['me.ele.application.ui.Launcher.LauncherActivity'],
+          activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
           matches: 'ViewGroup[clickable=true] - TextView[text="放弃"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13710574',
             'https://i.gkd.li/i/13710591',
           ],
-        },
-        {
-          key: 4,
-          activityIds: 'me.ele.application.ui.Launcher.LauncherActivity',
-          matches: '@ImageView <2 [vid="id_magex_mistview"]',
-          snapshotUrls: 'https://i.gkd.li/i/14050401',
         },
       ],
     },
@@ -187,7 +181,10 @@ export default defineAppConfig({
         {
           quickFind: true,
           activityIds: 'me.ele.foodchannel.page.WMChannelNativeActivity',
-          matches: '[text*="小调研"] - [vid="iv_cancel"][visibleToUser=true]',
+          matches: [
+            '[text*="小调研"]',
+            '[vid="iv_cancel"][visibleToUser=true]',
+          ],
           exampleUrls:
             'https://m.gkd.li/57941037/350d8f4d-8ab0-4572-8ff0-450ab4729d53',
           snapshotUrls: 'https://i.gkd.li/i/14630370',

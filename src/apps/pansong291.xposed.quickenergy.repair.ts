@@ -5,7 +5,7 @@ export default defineAppConfig({
   name: '芝麻粒',
   groups: [
     {
-      name: '未分类-开屏弹窗跳过',
+      name: '通知提示-开屏[提示]弹窗',
       key: 1,
       desc: '打开app点击知道了',
       rules: [

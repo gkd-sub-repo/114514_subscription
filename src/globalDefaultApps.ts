@@ -1,4 +1,6 @@
-import apps from './rawApps';
+import { batchImportApps } from '@gkd-kit/tools';
+
+const apps = await batchImportApps(`${import.meta.dirname}/apps`);
 
 // 全局规则黑名单
 // 在一些非系统应用中禁用所有全局规则
@@ -70,6 +72,7 @@ export const blackListAppIDs: string[] = [
   'org.kde.kdeconnect_tp', // KDE Connect
   'xyz.adproqwq.GKDTool', // GKDTool
   'com.alibaba.aliyun', // 阿里云
+  'com.alicloud.databox', // 阿里云盘 开屏广告在 https://i.gkd.li/i/15144565 误触导致自动签到规则执行中断
 
   'com.canghai.haoka',
   'com.xy.td',
@@ -170,6 +173,7 @@ export const yongBlackListAppIDs = new Set([
   'xxx.pornhub.fuck', // JavDB
   'com.netease.cloudmusic', // 网易云音乐 全局规则在 https://i.gkd.li/i/14931708 误触
   'com.zhihu.android', // 知乎 全局规则在 https://i.gkd.li/i/14964990 误触
+  'com.luna.music', // 汽水音乐 全局规则在 https://i.gkd.li/i/15124801 误触
   ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 
@@ -185,6 +189,7 @@ export const openAdWhiteListAppIDs = new Set([
   'com.bbk.appstore', // vivo应用商店
   'com.huawei.appmarket', // 华为应用市场
   'com.miui.player', // 小米音乐
+  'com.tencent.southpole.appstore', // 黑鲨应用市场
 ]);
 
 // 更新提示白名单

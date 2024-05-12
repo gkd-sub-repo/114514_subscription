@@ -3,12 +3,11 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.tencent.mm',
   name: '微信',
-  deprecatedKeys: [12, 13, 14, 16, 20, 21, 23, 24, 27, 33],
   groups: [
     {
       key: 0,
       name: '分段广告-朋友圈广告',
-      desc: '点击广告卡片右上角,直接关闭/出现菜单,确认关闭',
+      desc: '点击卡片广告右上角,直接关闭/出现菜单,确认关闭',
       activityIds: [
         'com.tencent.mm.plugin.sns.ui.SnsTimeLineUI',
         'com.tencent.mm.plugin.sns.ui.improve.ImproveSnsTimelineUI',
@@ -18,7 +17,7 @@ export default defineAppConfig({
       rules: [
         {
           key: 0,
-          name: '点击广告卡片右上角',
+          name: '点击卡片广告右上角',
           matches:
             'RelativeLayout >5 LinearLayout[childCount=2] > TextView[text!=null] + LinearLayout[visibleToUser=true][clickable=true]',
           snapshotUrls: [
@@ -151,11 +150,10 @@ export default defineAppConfig({
       quickFind: true,
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'activity',
       activityIds: [
-        'com.tencent.mm.plugin.webview.ui.tools.SDKOAuthUI',
         'com.tencent.mm.plugin.base.stub.UIEntryStub',
         'com.tencent.mm.ui.LauncherUI',
+        'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
       ],
       rules: [
         {
@@ -163,6 +161,7 @@ export default defineAppConfig({
           snapshotUrls: [
             'https://i.gkd.li/i/12663602',
             'https://i.gkd.li/i/13065462',
+            'https://i.gkd.li/i/15271716',
           ],
         },
       ],
@@ -229,68 +228,6 @@ export default defineAppConfig({
       ],
     },
     {
-      key: 6,
-      name: '分段广告-订阅号文章广告',
-      desc: '点击[广告]按钮-点击[关闭此广告]/[不感兴趣]-点击[与我无关]',
-      forcedTime: 3000,
-      activityIds: [
-        'com.tencent.mm.plugin.brandservice.ui.timeline.preload.ui.TmplWebView', //调整为TmplWebView, 同时兼容多种ID
-        'com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI',
-      ],
-      // 使用id作为特征节点适配多语言，不使用 preKeys 提高点击成功率
-      rules: [
-        // 第一段
-        {
-          key: 1,
-          name: '点击[广告]按钮',
-          // 防止在第二段、第三段、出现时触发，防止在文章末尾广告关闭后触发
-          excludeMatches: [
-            '[id="fullCardFeedbackTitle" || id="dislike" || id="isdismatch"][visibleToUser=true]',
-          ],
-          matches: [
-            'View[childCount=1] > @[id="feedbackTagContainer"][clickable=true][visibleToUser=true] > [id^="feedback"][visibleToUser=true]',
-          ],
-          snapshotUrls: [
-            'https://i.gkd.li/i/12700183', // id^="feedback"
-            'https://i.gkd.li/i/12642232', // ui.TmplWebViewMMUI
-            'https://i.gkd.li/i/13199281', // ui.TmplWebViewTooLMpUI
-            'https://i.gkd.li/i/12646837', // 事件完成后，反馈按钮仍然存在，使用 View[childCount=1] 进行限定，防止频繁触发规则
-            'https://i.gkd.li/i/14006180', // com.tencent.mm.plugin.webview.ui.tools.fts.MMSosWebViewUI
-            'https://i.gkd.li/i/14834975', // 文章未浏览至页面底部，广告反馈按钮不可见，使用 [visibleToUser=true] 进行限定，防止打开文章就频繁触发规则
-            'https://i.gkd.li/i/15061339', // 使用excludeMatches防止在文章末尾广告关闭后误触
-          ],
-        },
-        // 第二段
-        {
-          key: 25,
-          name: '点击[关闭此广告]',
-          matches: '[id="closeBtn"][clickable=true][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14834975',
-        },
-        {
-          key: 26,
-          name: '点击[不感兴趣]',
-          excludeMatches: '[id="fullCardFeedbackTitle"][visibleToUser=true]',
-          matches: '[id="dislike"][clickable=true][visibleToUser=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14006203',
-            'https://i.gkd.li/i/14834966',
-            'https://i.gkd.li/i/15061424', // 使用excludeMatches防止在文章末尾广告关闭后误触
-          ],
-        },
-        // 第三段
-        {
-          key: 50,
-          name: '点击[与我无关]',
-          matches: '[id="isdismatch"][clickable=true][visibleToUser=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14006206',
-            'https://i.gkd.li/i/14834959',
-          ],
-        },
-      ],
-    },
-    {
       key: 7,
       name: '功能类-自动选中发送原图',
       desc: '图片和视频选择器-自动选中底部中间的发送原图',
@@ -345,7 +282,7 @@ export default defineAppConfig({
     },
     {
       key: 10,
-      name: '全屏广告-微信小程序-开屏广告',
+      name: '开屏广告-微信小程序',
       quickFind: true,
       matchTime: 10000,
       // actionMaximum: 1, // 经常需要点2次，首次点击过早大概率跳不过
@@ -597,6 +534,30 @@ export default defineAppConfig({
           exampleUrls:
             'https://m.gkd.li/57941037/43632b72-d389-4fe7-9708-dac78e900679',
           snapshotUrls: 'https://i.gkd.li/i/14645385',
+        },
+      ],
+    },
+    {
+      key: 34,
+      name: '功能类-付款时自动点击[支付]',
+      quickFind: true,
+      actionMaximum: 1,
+      activityIds: 'com.tencent.mm.framework.app.UIPageFragmentActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '[vid="kinda_button_impl_wrapper"][desc="立即支付"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/13fd1e89-6d75-4efe-90d6-91687de8c9b1',
+          snapshotUrls: 'https://i.gkd.li/i/15144571',
+        },
+        {
+          preKeys: [0],
+          key: 1,
+          matches: '[vid="kinda_button_impl_wrapper"][desc="支付"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/69380aa0-e6d2-4ea4-8ee7-6a1e45889e6c',
+          snapshotUrls: 'https://i.gkd.li/i/15144570',
         },
       ],
     },

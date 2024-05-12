@@ -3,7 +3,6 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.netease.cloudmusic',
   name: '网易云音乐',
-  deprecatedKeys: [3, 9, 11, 12],
   groups: [
     {
       key: 0,
@@ -125,6 +124,13 @@ export default defineAppConfig({
           matches: '[vid="adTagView"]',
           snapshotUrls: 'https://i.gkd.li/i/15047096',
         },
+        {
+          key: 2,
+          quickFind: true,
+          activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
+          matches: '[vid="iv_ad_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/15282417',
+        },
       ],
     },
     {
@@ -150,12 +156,15 @@ export default defineAppConfig({
         {
           key: 2,
           quickFind: true,
-          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          activityIds: [
+            'com.netease.cloudmusic.activity.MainActivity',
+            'com.netease.cloudmusic.activity.PlayerActivity',
+          ],
           matches:
-            '@ImageView[index=1][clickable=true] <2 ViewGroup[childCount=2] <<n [vid="dsl_dialog_root"]',
+            'ViewGroup[childCount=2] > @ImageView[index=1][clickable=true][visibleToUser=true] <<n [vid="dsl_dialog_root"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13684724',
             'https://i.gkd.li/i/14036940',
+            'https://i.gkd.li/i/15244091',
           ],
         },
         {
@@ -173,6 +182,14 @@ export default defineAppConfig({
           activityIds: 'com.netease.cloudmusic.activity.PlayerActivity',
           matches: '[text="立即限免体验"]',
           snapshotUrls: 'https://i.gkd.li/i/15125892',
+        },
+        {
+          key: 6,
+          quickFind: true,
+          activityIds: 'com.netease.cloudmusic.activity.MainActivity',
+          matches:
+            'View[childCount=4] > @TextView[index=2][visibleToUser=true] <<n [vid="popLayerWebViewContainer"]',
+          snapshotUrls: 'https://i.gkd.li/i/15160018',
         },
       ],
     },

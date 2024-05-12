@@ -22,11 +22,12 @@ export default defineAppConfig({
         {
           preKeys: [0],
           key: 1,
-          name: '关闭弹窗-1',
+          name: '关闭弹窗',
           matches: '[vid="ivClose"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13038304',
             'https://i.gkd.li/i/14235221',
+            'https://i.gkd.li/i/15144565', // 全局规则开屏广告在此误触导致自动签到规则执行中断
           ],
         },
         {
@@ -98,6 +99,21 @@ export default defineAppConfig({
           activityIds: 'com.taobao.login4android.scan.QrScanActivity',
           matches: '[text="确认并登录"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/14414503', // 该页面不允许截图所以快照页面是黑屏，但不影响编写规则
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '全屏广告-[容量使用超限]提示',
+      desc: '点击关闭',
+      rules: [
+        {
+          quickFind: true,
+          activityIds: 'com.alicloud.databox.MainActivity',
+          matches: ['[text="容量使用超限"]', '[vid="layout_close"]'],
+          exampleUrls:
+            'https://m.gkd.li/57941037/a219a480-c0a3-4064-832d-533f66995fed',
+          snapshotUrls: 'https://i.gkd.li/i/15158788',
         },
       ],
     },

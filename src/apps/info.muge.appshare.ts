@@ -28,8 +28,15 @@ export default defineAppConfig({
         },
         {
           key: 1,
-          matches: '[text*="跳过"][text.length<=10]',
+          matches: '[text*="跳过"][visibleToUser=true][text.length<=10]',
           snapshotUrls: 'https://i.gkd.li/i/14553551',
+        },
+        {
+          key: 2,
+          order: -1,
+          matches:
+            '@ImageView[clickable=true] < * >2 [text*="跳过"][visibleToUser=true][text.length<10]',
+          snapshotUrls: 'https://i.gkd.li/i/15269380',
         },
       ],
     },
@@ -121,11 +128,37 @@ export default defineAppConfig({
       desc: '广告展示率低于20%时出现的广告',
       rules: [
         {
+          key: 0,
           matches:
             'RelativeLayout[childCount=2] > RelativeLayout > View[clickable=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/6b1d7b37-edd7-499f-a8b0-ecba24ef2c44',
           snapshotUrls: 'https://i.gkd.li/i/14181146',
+        },
+        {
+          key: 1,
+          activityIds: 'info.muge.appshare.view.main.MainActivity',
+          matches:
+            '[id="android:id/content"] >(3,4) FrameLayout[childCount>3] > FrameLayout[childCount=1] > ImageView',
+          exampleUrls:
+            'https://m.gkd.li/57941037/13a69193-a276-4115-97dd-bd7a4b49fbee',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15209619',
+            'https://i.gkd.li/i/15211765',
+          ],
+        },
+        {
+          key: 2,
+          activityIds:
+            'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
+          matches:
+            '[text="反馈"] <n * > @View[childCount=1][index=0 || index=1] > Image[text=""]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/155fdf95-1f5a-4bf3-a8e7-161e6bfe7bbf',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15209618',
+            'https://i.gkd.li/i/15282994',
+          ],
         },
       ],
     },

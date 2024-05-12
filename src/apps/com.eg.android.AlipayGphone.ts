@@ -207,11 +207,13 @@ export default defineAppConfig({
           key: 1,
           preKeys: [0],
           name: '点击[对该内容不感兴趣]',
-          matches:
-            '@RelativeLayout[clickable=true] >2 [text="对该内容不感兴趣"]',
+          matches: '@RelativeLayout[clickable=true] >2 [text$="内容不感兴趣"]',
           exampleUrls:
             'https://m.gkd.li/57941037/7008e1da-738c-4790-9f12-6a5155d42c47',
-          snapshotUrls: 'https://i.gkd.li/i/14546047',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14546047',
+            'https://i.gkd.li/i/15209602',
+          ],
         },
       ],
     },
@@ -278,15 +280,34 @@ export default defineAppConfig({
       key: 21,
       name: '局部广告-卡片广告',
       desc: '点击关闭',
+      quickFind: true,
       rules: [
         {
-          activityIds:
+          key: 0,
+          activityIds: [
             'com.alipay.mobile.nebulax.integration.mpaas.activity.NebulaActivity$Main',
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          ],
           matches:
-            'View[childCount=3] > @TextView[text=""][clickable=true][visibleToUser=true] + * > [text!=null]',
+            'WebView[text="基金"] >(2,3) View[childCount=3] > @TextView[text=""][clickable=true][visibleToUser=true] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
           exampleUrls:
             'https://m.gkd.li/57941037/5df9b6fb-7455-492c-a726-fb6a42266a02',
-          snapshotUrls: 'https://i.gkd.li/i/14907533',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14907533',
+            'https://i.gkd.li/i/15144834',
+            'https://i.gkd.li/i/15220394',
+            'https://i.gkd.li/i/15231403', // 避免误触
+          ],
+        },
+        {
+          key: 1,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            'View[childCount=3] >4 View[childCount=6] > @TextView[index=2][clickable=true][visibleToUser=true] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
+          exampleUrls:
+            'https://m.gkd.li/57941037/2d714755-efe9-4c63-8187-7f9b7a5a199c',
+          snapshotUrls: 'https://i.gkd.li/i/15144844',
         },
       ],
     },

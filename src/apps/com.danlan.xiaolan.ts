@@ -3,12 +3,11 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.danlan.xiaolan',
   name: 'Blued极速版',
-  deprecatedKeys: [0],
   groups: [
     {
       key: 1,
       quickFind: true,
-      name: '分段广告-"附近的人"页面广告卡片',
+      name: '分段广告-"附近的人"页面卡片广告',
       activityIds: 'com.soft.blued.ui.home.HomeActivity',
       rules: [
         {
@@ -28,7 +27,7 @@ export default defineAppConfig({
     {
       key: 3,
       quickFind: true,
-      name: '分段广告-"来访"页面广告卡片',
+      name: '分段广告-"来访"页面卡片广告',
       activityIds: 'com.blued.android.core.ui.TerminalActivity',
       rules: [
         {

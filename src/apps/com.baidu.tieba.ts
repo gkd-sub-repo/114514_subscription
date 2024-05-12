@@ -3,7 +3,6 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.baidu.tieba',
   name: '百度贴吧',
-  deprecatedKeys: [4],
   groups: [
     {
       key: 0,
@@ -302,6 +301,7 @@ export default defineAppConfig({
       resetMatch: 'app',
       rules: [
         {
+          forcedTime: 5000,
           activityIds: [
             'com.baidu.tieba.tblauncher.MainTabActivity',
             'com.baidu.tbadk.browser.TBWebContainerActivity',

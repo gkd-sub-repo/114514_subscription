@@ -3,7 +3,6 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.xunlei.downloadprovider',
   name: '迅雷',
-  deprecatedKeys: [11],
   groups: [
     {
       key: 0,
@@ -231,7 +230,7 @@ export default defineAppConfig({
     },
     {
       key: 4,
-      name: '分段广告-"下载页"广告卡片',
+      name: '分段广告-"下载页"卡片广告',
       desc: '需选二次弹窗关闭原因',
       quickFind: true,
       rules: [

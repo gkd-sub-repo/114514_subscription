@@ -105,6 +105,19 @@ export default defineAppConfig({
             '@ViewGroup[clickable=true] - ViewGroup[childCount=3] >2 [text="其他"]',
           snapshotUrls: 'https://i.gkd.li/i/15103543',
         },
+        {
+          key: 5,
+          quickFind: true,
+          activityIds: 'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
+          matches: [
+            '[text="继续拼单"]',
+            '@[clickable=true] > [text="先去逛逛"]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/15197527',
+            'https://i.gkd.li/i/15211473',
+          ],
+        },
       ],
     },
     {
@@ -144,8 +157,9 @@ export default defineAppConfig({
           key: 4,
           name: '刮奖弹窗',
           quickFind: true,
+          action: 'back',
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
-          matches: '@ImageView[clickable=true] + * >4 [text="去刮奖"]',
+          matches: '[text="去刮奖"][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/14456101',
         },
       ],

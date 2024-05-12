@@ -6,7 +6,7 @@ export default defineAppConfig({
   groups: [
     {
       key: 1,
-      name: '局部广告-广告卡片',
+      name: '局部广告-卡片广告',
       activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
       rules: [
         {
@@ -101,13 +101,25 @@ export default defineAppConfig({
     },
     {
       key: 6,
-      name: '全屏广告-豪华绿钻弹窗',
-      desc: '点击X',
+      name: '全屏广告-VIP弹窗',
+      desc: '点击关闭',
       rules: [
         {
+          key: 0,
           activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
           matches: '[id="android:id/content"] >4 ViewGroup[childCount=0]',
           snapshotUrls: 'https://i.gkd.li/i/13806782',
+        },
+        {
+          key: 1,
+          activityIds:
+            'com.tencent.qqmusic.activity.TranslucentWebViewActivity',
+          matches:
+            '@View[clickable=true][desc="关闭"] +2 * >2 [desc$="确认协议并开通" || desc="立即开通会员"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15209764',
+            'https://i.gkd.li/i/15261116',
+          ],
         },
       ],
     },

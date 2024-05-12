@@ -3,7 +3,6 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.ct.client',
   name: '中国电信',
-  deprecatedKeys: [0],
   groups: [
     {
       key: -1,
@@ -81,8 +80,20 @@ export default defineAppConfig({
       actionMaximum: 1,
       resetMatch: 'app',
       // quickFind: true, 实机测试使用无法跳过
-      rules: 'ImageView[id="com.ct.client:id/msg_close"]',
-      snapshotUrls: 'https://i.gkd.li/i/13043522',
+      rules: [
+        {
+          key: 0,
+          matches: 'ImageView[id="com.ct.client:id/msg_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/13043522',
+        },
+        {
+          key: 1,
+          quickFind: true,
+          activityIds: 'com.ct.client.activity.MainActivity',
+          matches: '[text^="开启消息通知"] <n * > [vid="ivClose"]',
+          snapshotUrls: 'https://i.gkd.li/i/15209597',
+        },
+      ],
     },
     {
       key: 6,

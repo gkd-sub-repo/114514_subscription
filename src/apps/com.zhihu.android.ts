@@ -3,7 +3,6 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'com.zhihu.android',
   name: '知乎',
-  deprecatedKeys: [0, 1, 2, 3, 4, 5, 7, 8, 9, 11],
   groups: [
     {
       key: 6,
@@ -181,11 +180,16 @@ export default defineAppConfig({
         {
           key: 5,
           quickFind: true,
-          activityIds:
+          activityIds: [
             'com.zhihu.android.mixshortcontainer.MixShortContainerActivity',
+            'com.zhihu.android.mix.activity.ContentMixProfileActivity',
+          ],
           matches:
-            '@Image[index=1][clickable=true][visibleToUser=true] + [text$="广告"] <<n [vid="view_content"]',
-          snapshotUrls: 'https://i.gkd.li/i/14391614',
+            '@Image[clickable=true][visibleToUser=true] <2 * > [text$="广告"] <<n [vid="view_content"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14391614',
+            'https://i.gkd.li/i/15282584',
+          ],
         },
         {
           key: 6,

@@ -3,7 +3,6 @@ import { defineAppConfig } from '../types';
 export default defineAppConfig({
   id: 'cn.xiaochuankeji.tieba',
   name: '最右',
-  deprecatedKeys: [0, 11],
   groups: [
     {
       key: 1,
@@ -31,7 +30,7 @@ export default defineAppConfig({
     },
     {
       key: 3,
-      name: '分段广告-评论区广告卡片',
+      name: '分段广告-评论区卡片广告',
       activityIds:
         'cn.xiaochuankeji.tieba.ui.post.postdetail.PostDetailActivity',
       rules: [

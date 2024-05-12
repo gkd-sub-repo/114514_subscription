@@ -33,9 +33,9 @@ https://raw.gitmirror.com/gkd-sub-repo/114514_subscription/main/dist/114514_gkd.
 https://cdn.jsdelivr.net/gh/gkd-sub-repo/114514_subscription@main/dist/114514_gkd.json5
 ```
 
-当前版本: v48
+当前版本: v49
 
-当前订阅文件已适配 727 个应用，共有 1705 应用规则组，3 全局规则组
+当前订阅文件已适配 732 个应用，共有 1712 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./AppList.md)
 
@@ -51,7 +51,7 @@ https://cdn.jsdelivr.net/gh/gkd-sub-repo/114514_subscription@main/dist/114514_gk
 
 ## 感谢以下开发者的贡献
 
-![img](https://contrib.rocks/image?repo=gkd-sub-repo/114514_subscription&_v=48)
+![img](https://contrib.rocks/image?repo=gkd-sub-repo/114514_subscription&_v=49)
 
 ## Star History
 

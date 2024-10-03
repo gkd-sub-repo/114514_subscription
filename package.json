@@ -63,7 +63,7 @@
     "url": "git+https://github.com/gkd-sub-repo/114514_subscription.git"
   },
   "volta": {
-    "node": "20.13.1"
+    "node": "20.18.0"
   },
   "packageManager": "pnpm@9.1.0",
   "commitlint": {
